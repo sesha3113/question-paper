@@ -10,14 +10,8 @@ export const QuestionHeader: FunctionComponent<QuestionHeaderProps> = ({
   questionNumber,
   setCurrentQuestion
 }) => {
-  useEffect(() => {
-    console.log("questionNumber at header", questionNumber);
-  }, [questionNumber]);
-
   const goback = (prevQuestionIndex: number) => {
-    console.log("clickes", prevQuestionIndex);
     if (prevQuestionIndex >= 0) {
-      console.log("reduce");
       setCurrentQuestion(prevQuestionIndex);
     }
   };

@@ -36,3 +36,17 @@ export interface OptionProp {
   selected: boolean;
   subquestion: any[] | null;
 }
+
+export interface answerProp {
+  id: number;
+  question: string;
+  answer: string;
+}
+export interface answerPropAdv {
+  id: answerSubProp;
+}
+
+export interface answerSubProp {
+  question: string;
+  answer: string;
+}

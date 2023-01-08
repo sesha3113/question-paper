@@ -12,8 +12,6 @@ type questionProp = {
 export const QuestionBody: FunctionComponent<questionProp> = (questionProp) => {
   const { question } = questionProp;
 
-  console.log(question);
-
   return (
     <>
       <div className="h-[360px]">
