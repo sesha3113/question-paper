@@ -1,8 +1,8 @@
 import { createContext } from "react";
-import { answerProp } from "../types/types";
+import { answerProp, answerPropAdv } from "../types/types";
 type AppContextInterface = {
-  answer: answerProp[];
-  updateAnswer: (val: answerProp) => void;
+  answer: answerPropAdv[];
+  updateAnswer: (val: answerPropAdv) => void;
 };
 
 export const AppContext = createContext<AppContextInterface | undefined>(

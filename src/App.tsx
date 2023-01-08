@@ -6,7 +6,7 @@ import Result from "./views/Result";
 import NoMatch from "./views/NoMatch";
 import { AppContext } from "./context/context";
 import { useCallback, useEffect, useState } from "react";
-import { answerProp } from "./types/types";
+import { answerProp, answerPropAdv } from "./types/types";
 
 function App() {
   const router = createBrowserRouter([
@@ -27,9 +27,13 @@ function App() {
       element: <NoMatch />
     }
   ]);
-  const [answer, setAnswer] = useState<answerProp[]>([]);
+  const [answer, setAnswer] = useState<answerPropAdv[]>([]);
   const updateAnswer = useCallback(
-    (newAnswer: answerProp) => setAnswer([...answer, newAnswer]),
+    (newAnswer: answerPropAdv) => {
+      console.log("newAnswer newAnswer", newAnswer);
+      console.log("newAnswer", Object.values(newAnswer)[0]);
+      setAnswer([...answer, newAnswer]);
+    },
     [answer]
   );
   useEffect(() => {

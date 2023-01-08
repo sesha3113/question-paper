@@ -43,7 +43,7 @@ export interface answerProp {
   answer: string;
 }
 export interface answerPropAdv {
-  id: answerSubProp;
+  [id: number]: answerSubProp;
 }
 
 export interface answerSubProp {

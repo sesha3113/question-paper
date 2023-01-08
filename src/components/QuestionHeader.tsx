@@ -1,5 +1,6 @@
-import { FunctionComponent, useEffect } from "react";
-// import BackArrow from "../resources/icons/BackArrow.svg";
+import { FunctionComponent } from "react";
+
+import { AiOutlineArrowLeft } from "react-icons/ai";
 
 type QuestionHeaderProps = {
   questionNumber: number;
@@ -17,9 +18,11 @@ export const QuestionHeader: FunctionComponent<QuestionHeaderProps> = ({
   };
   return (
     <>
-      <div className="h-[70px] bg-[#eee] border-b-[1px] border-[#e1e1e1]">
-        {/* <img src={BackArrow} alt="back-arrow" /> */}
-        <button onClick={() => goback(questionNumber - 1)}> go back </button>
+      <div className="h-[70px] bg-[#eee] border-b-[1px] border-[#e1e1e1] flex justify-start items-center pl-4">
+        <AiOutlineArrowLeft
+          style={{ fontSize: "20px" }}
+          onClick={() => goback(questionNumber - 1)}
+        />
       </div>
     </>
   );

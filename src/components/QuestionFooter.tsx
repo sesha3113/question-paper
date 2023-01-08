@@ -20,8 +20,13 @@ export const QuestionFooter: FunctionComponent<QuestionFooterProps> = ({
   };
   return (
     <>
-      <div className="h-[70px] bg-[#eee] border-t-[1px] border-[#e1e1e1]">
-        <button onClick={() => next(questionNumber + 1)}> next </button>
+      <div className="h-[70px] bg-[#eee] border-t-[1px] border-[#e1e1e1] flex items-center justify-end pr-5">
+        <button
+          className="px-8 rounded-md py-2 bg-red-500 text-white"
+          onClick={() => next(questionNumber + 1)}
+        >
+          Next
+        </button>
       </div>
     </>
   );

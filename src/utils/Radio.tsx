@@ -16,9 +16,10 @@ const Radio: FunctionComponent<radioProps> = (radioProps) => {
   const [answer, setAnswer] = useState("");
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     appContext?.updateAnswer({
-      id: questionid,
-      question: question.question,
-      answer: e.target.value
+      [questionid]: {
+        question: question.question,
+        answer: e.target.value
+      }
     });
     setAnswer(e.target.value);
   };
