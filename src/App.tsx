@@ -1,24 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./views/Home";
+import Question from "./views/Questions";
+import Result from "./views/Result";
+import NoMatch from "./views/NoMatch";
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />
+    },
+    {
+      path: "/question",
+      element: <Question />
+    },
+    {
+      path: "/result",
+      element: <Result />
+    },
+    {
+      path: "*",
+      element: <NoMatch />
+    }
+  ]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="h-screen w-screen flex justify-center items-center">
+      <RouterProvider router={router} />
     </div>
   );
 }
